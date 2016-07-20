@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>找童游，逛天下</title>
+
+<link type="text/css" rel="stylesheet" href="css/jquery.fullPage.css">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$.fn.fullpage({
+		slidesColor: ['#47a7fc', '#f4592d', '#93d057', '#e83a93'],
+		anchors: ['page1', 'page2', 'page3', 'page4'],
+		menu: '#menu',
+		afterRender: function(){
+			$('#tab-01 li').each(function(){
+				var $rel = $(this).attr('rel');
+				var $arr = $rel.split(',');
+				$(this).animate({
+					left: $arr[2] + 'px',
+					top: $arr[3] + 'px'
+				}, 500);
+			});
+			$('.inner li').each(function(){
+				var $rel = $(this).attr('rel');
+				var $arr = $rel.split(',');
+				$(this).animate({
+					left: $arr[0] + 'px',
+					top: $arr[1] + 'px'
+				}, 500);
+			});
+		},
+		afterLoad: function(anchorLink, index){
+			if(index == 1){
+				$('#tab-01 li').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[2] + 'px',
+						top: $arr[3] + 'px'
+					}, 500);
+				});
+			}
+			if(index == 2 || index == 3 || index == 4 /*|| index == 5*/){
+				$('.inner').eq(index - 2).find('li').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[2] + 'px',
+						top: $arr[3] + 'px'
+					}, 500);
+				});
+			}
+			/*if(index == 6){
+				$('.zanzhu-con a').fadeIn(1000);
+			}*/
+		},
+		onLeave: function(index, direction){
+			if(index == 1){
+				$('#tab-01 li').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[0] + 'px',
+						top: $arr[1] + 'px'
+					}, 500);
+				});
+			}
+			if(index == 2 || index == 3 || index == 4 ){
+				$('.inner').eq(index - 2).find('li').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[0] + 'px',
+						top: $arr[1] + 'px'
+					}, 500);
+				});
+			}
+			/*if(index == 6){
+				$('.zanzhu-con a').fadeOut(1000);
+			}*/
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+<div id="top">
+  <div class="head">
+  	<div class="head-cen">
+      <img class="head-cen-01" src="img/top-zi.png" />
+      <img class="logo" src="img/logo.png" />
+      <div class="head-cen-02">
+      	<div class="head-cen-0201"><img src="img/head-cen-0201.png" /><a href="#">注册</a></div>
+        <div class="head-cen-0202"><img src="img/head-cen-0202.png" /><a href="#">登陆</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <ul id="menu">
+        <li data-menuanchor="" class="menu01"><a href="#"><img src="img/menu01.png" /></a></li>
+        <li data-menuanchor="page1" class="active menu2"><a href="#page1"><img src="img/menu02.png" /></a></li>
+        <li data-menuanchor="page2" class="menu2"><a href="#page2"><img src="img/menu03.png" /></a></li>
+        <li data-menuanchor="page3" class="menu2"><a href="#page3"><img src="img/menu04.png" /></a></li>
+        <li data-menuanchor="page4" class="menu2"><a href="#page4"><img src="img/menu05.png" /></a></li>
+        <li data-menuanchor="" class="menu2"><a href="#"><img src="img/menu06.png" /></a></li>
+        <li><a href="#"><img src="img/menu07.png" /></a></li>
+        <div class="share">
+        	<span class="share-01"></span>
+            <span class="share-02"></span>
+            <span class="share-03"></span>
+            <span class="share-04"></span>
+        </div>
+    </ul>
+  </div>
+</div>
+<div class="section section1">
+	<div class="screen-main">
+        <!--tab01 start-->
+        <div id="box-01">
+          <div class="tab-01-zi"><img src="img/tab-01-zi.png" /></div>
+          <ul id="tab-01">
+              <li class="tab-01-now1" rel="150,150,10,88"><img src="img/1.png" /><label>活动方案</label></li>
+              <li class="tab-01-now2" rel="150,150,10,245"><img src="img/2.png" /><label>活动方案</label></li>
+              <li class="tab-01-now3" rel="150,150,145,326"><img src="img/3.png" /><label>活动方案</label></li>
+              <li class="tab-01-now4" rel="150,150,281,245"><img src="img/4.png" /><label>活动方案</label></li>
+              <li class="tab-01-now5" rel="150,150,281,88"><img src="img/5.png" /><label>活动方案</label></li>
+          </ul>
+          <div id="content-01">
+              <div>
+              	<p>1为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+              <div>
+              	<p>2为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+              <div>
+              	<p>3为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+              <div>
+              	<p>4为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+              <div>
+              	<p>5为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+          </div>
+        </div>
+        <!--tab01 end-->
+	</div>
+</div>
+<div class="section">
+	<div class="science-inner inner">
+        <ul class="">
+        	<li rel="480,-20,40,-20"><img src="img/section2-huo.png" /></li>
+            <li rel="480,-20,150,-20" ><img src="img/section2-dong.png" /></li>
+            <li rel="480,-20,260,-20"><img src="img/section2-ji.png" /></li>
+            <li rel="480,-20,370,-20"><img src="img/section2-jin.png" /></li>
+        </ul>
+        <div class="section2-content">
+        	<div><img src="img/demo.png" /></div>
+            <div><img src="img/demo.png" /></div>
+            <div><img src="img/demo.png" /></div>
+        </div>
+	</div>
+</div>
+<div class="section">
+	<div class="famous-inner inner">
+		
+        <!--tab02 start-->
+        <div id="box-02">
+          <ul id="tab-02">
+              <li class="tab-02-now1" rel="150,150,130,0"></li>
+              <li class="tab-02-now2" rel="150,150,0,220"></li>
+              <li class="tab-02-now3" rel="150,150,254,220"></li>
+          </ul>
+          <div id="content-02">
+              <div>
+              	<h3>专家名字</h3>
+                <span></span>
+                <p>11这个专家说了说明话，给予了说明希望随便写点什么吧
+随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随点什</p>
+              </div>
+              <div>
+              	<h3>专家名字</h3>
+                <span></span>
+                <p>1222这个专家说了说明话，给予了说明希望随便写点什么吧
+随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随点什</p>
+              </div>
+              <div>
+              	<h3>专家名字</h3>
+                <span></span>
+                <p>3333这个专家说了说明话，给予了说明希望随便写点什么吧
+随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随便写点什么吧随点什</p>
+              </div>
+          </div>
+        </div>
+        <!--tab02 end-->
+	</div>
+</div>
+<div class="section">
+	<div class="social-inner inner">
+		<!--tab03 start-->
+        <div id="box-03">
+          <ul id="tab-03">
+              <li class="tab-03-now1" rel="150,150,150,0"><img src="img/tab-03-now01.png" /></li>
+              <li class="tab-03-now2" rel="150,150,38,118"><img src="img/tab-03-now02.png" /></li>
+              <li class="tab-03-now3" rel="150,150,265,118"><img src="img/tab-03-now03.png" /></li>
+              <li class="tab-03-now4" rel="150,150,150,240"><img src="img/tab-03-now04.png" /></li>
+          </ul>
+          <div id="content-03">
+              <div>
+              	<p>全团人员均购买专业户外保险，涵盖骑马、滑雪、攀岩、漂流等项目。</p>
+                <p>课程只收取孩子费用，其他单项费用全部明示。</p>
+                <p>一价全包，团费以外不再收取任何费用。</p>
+              </div>
+              <div>
+              	<p>2为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+              <div>
+              	<p>3为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+              <div>
+              	<p>4为4-12岁的孩子提供</p>
+                <p>自然认知、户外技能和团队运动的体验式教育课程</p>
+              </div>
+          </div>
+        </div>
+        <!--tab03 end-->
+	</div>
+</div>
+
+<script type="text/javascript" src="js/tab.js"></script>
+</body>
+</html>
