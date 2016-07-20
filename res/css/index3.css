@@ -1,0 +1,159 @@
+
+/*桌面背景设置*/
+html{
+	overflow: hidden;
+}
+body{
+	overflow: hidden;
+	background:url(../img/bg1.jpg) center;
+}
+#pagewrap{		
+	background: #ccc;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	/*transition:ease 0.4s;*/
+}
+.page{
+	height: 100%;
+	float: left;
+	z-index: 1;
+}
+.page1{
+	width: 100%;
+	background:url(../img/bg1.jpg) center; 
+}
+.page2{
+	background:url(../img/bg2.jpg) center;
+}
+.page3{
+	background:url(../img/bg3.jpg) center;
+}
+.page4{
+	background:url(../img/bg4.jpg) center;
+}
+#smallIcon{
+	position: absolute;
+	left: 50%;
+	top:3%;
+	width: 140px;
+	margin-left: -70px;
+	z-index: 10;
+}
+#smallIcon span{
+	float: left;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #fff;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#smallIcon span.se{
+	background: pink;
+}
+/*桌面背景设置结束*/
+/*#leftnav start*/
+#leftnav{
+	width: 100px;
+	height: 400px;
+	background:url(../img/hui.png) repeat;
+	position: absolute;
+	left: -100px;
+	top: 50%;
+	margin-top: -200px;
+	display: none;
+	border-radius: 5px;
+}
+#leftnav ul{
+	width: 100px;
+	height: 350px;
+	overflow: hidden;
+}
+#leftnav ul li{
+	width: 34px;
+	height: 34px;
+	overflow: hidden;
+	margin-top: 25px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+#leftnav ul li img{
+	width: 100%;
+	height: 100%;
+}
+#navs{
+	width: 10px;
+	height: 59px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top:50%;
+}
+/*#leftnav end*/
+/*main start*/
+.main{
+	margin: 100px;
+
+}
+.app{
+	overflow: hidden;
+}
+.app li{
+	float: left;
+	width: 70px;
+	padding: 10px 20px; 
+	margin:10px;
+	border-radius: 5px;
+	position: relative;
+}
+
+.app li img{
+	width: 50px;
+	height: 50px; 
+	overflow: hidden;
+	display: block;
+	margin:0 auto;
+}
+.app li span{
+	line-height: 25px;
+	display: block;
+	margin:0 auto;
+	max-width: 70px;
+	overflow: hidden;
+	color: #fff;
+	font-family: '微软雅黑';
+	margin-top: 5px;
+	background:url(../img/hui.png) repeat;
+	padding:0 5px;
+	border-radius: 10px;
+	text-align: center;
+}
+.app li:hover{
+	background:url(../img/hui.png) repeat;
+}
+.app li.se{
+	background:url(../img/hui.png) repeat;
+}
+.drawDiv{
+	border: 1px dashed #000;
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+/*main end*/
+#footer{
+	width: 100%;
+	height: 50px;
+	background: #fff;	
+	position: absolute; 
+	left: 0;
+	bottom: 0;
+	opacity: 0.5;
+	filter:alpha(opacity = 50);
+}
